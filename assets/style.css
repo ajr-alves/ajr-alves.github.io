@@ -98,7 +98,6 @@ a:focus-visible, button:focus-visible {
 .id .role { font-size: 14px; color: var(--muted); }
 .side nav { display: flex; flex-direction: column; font-size: 15px; }
 .side nav a { padding: 10px 0; text-decoration: none; }
-.side nav a.current { font-weight: 600; }
 .links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; }
 
 main { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 72px; }
