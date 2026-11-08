@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trying to keep up · Alexandre Alves</title>
+<meta name="description" content="A month into working with AI agents, and how I'm trying to keep oversight of what they do.">
+<link rel="canonical" href="https://ajr-alves.github.io/thoughts/trying-to-keep-up/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trying to keep up">
+<meta property="og:description" content="A month into working with AI agents, and how I'm trying to keep oversight of what they do.">
+<meta property="og:url" content="https://ajr-alves.github.io/thoughts/trying-to-keep-up/">
+<meta name="theme-color" content="#F8F7F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1B1A17" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/symbol-icon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/symbol-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/symbol-180.png">
+<script>(function(){var t=null;try{t=localStorage.getItem('theme');}catch(e){}if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/theme.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="wrap narrow">
+
+  <div class="topbar spread">
+    <a class="back" href="/">
+      <img src="/assets/symbol.svg" width="40" height="30" alt="">
+      <span>Alexandre Alves</span>
+    </a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+      <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+
+  <main id="content" style="gap: 0;">
+    <header class="paper-head">
+      <p class="post-meta"><time datetime="2026-11-08">8 November 2026</time><span class="tag">Oversight</span></p>
+      <h1>Trying to keep up</h1>
+    </header>
+
+    <article class="prose">
+      <p>On my first day at work, my environment was pretty much set up for me, mostly by Claude itself. I opened the CLAUDE.md files (the plain-text instructions it reads before starting work) and realised I had never used one to that degree. I'd used Claude for small personal projects, but the idea of such a CLAUDE.md had never even occurred to me.</p>
+      <p>Then I saw what it could reach. It wasn't just a chat window. It had access to Google Workspace, GitHub repositories (where it commits and reviews code), and meeting transcripts. With all of that, in some ways it understands the project I'm on better than I do. To a point, it can work on its own, which leaves me with the human connection, the creativity and the oversight, which I think matter a lot.</p>
+      <p>My first reaction was that this was crazy. I'd had a much smaller version of that feeling during my two weeks at a Big 4 firm, when Copilot wrote a document and used the company template to turn it into a very nice presentation. It was nothing like this. And I don't think the model was the difference. The tools were.</p>
+      <p>It was also scary. The code moves too fast for anyone to check all of it, which can lead to all types of issues. For example, in my experience, the model tends to over-complicate names. Parts of a project get labels like M1 and M2, inside them you find H15, and you lose your bearings entirely. In that first week I kept asking myself how I was going to do this.</p>
+      <p>The fear then turned into interest. The question became, if this is happening, how do I keep oversight of it?</p>
+      <p>The first thing I tried was the simplest. I had the model keep a project page with a plain, fixed structure. It covers what the project is, what we're doing, where we are on the timeline, what's due when, who does what, and which decisions were made and why. It started as a way for me to look back and understand, but I think it helps the model too. When I ask about something on that page, it seems to understand better what I mean. It's now one of my skills, a saved instruction I can call whenever I need it. After a few hours of work, I ask it to update the page so I have a clear audit trail of what we did and why.</p>
+      <p>Then there are the agents, the separate AI workers that each handle one part of a task. I've been working on making them more interpretable. Most of that came from reading posts on the Claude developer site, passing them on to the model, and discussing what actually matters for our work. That shaped where the agents are called, how they're called, and the instructions they get. One specific change came from an article I read. The agents now have a strict "green" criterion, an automated check that must pass before a task is marked complete. In practice, it's the main model telling the agents, "I'm going to test the code you send me, so green had better be green." It seems to be working, but I'm not taking that on faith. For two weeks I'm recording my prompts and how I use the agents, and then the model and I will look at whether each change actually helps and decide what to keep. What I'm learning is that you can build some interpretability into the agents themselves.</p>
+      <p>I'll never code like an LLM does. I know Python, but I'll never write it that fast, and I can't review it at the speed it's written. What I can bring is human insight, and a lot of that is what I would call <span class="hl hl-1">optimistic distrust</span>. When the model analyses client data, I check whether the numbers make sense. If the model tells me a client wins 20% of the deals it goes after, and I know that client is successful, something is off. It's obvious, but I don't want to close my eyes and let it run. It's very good at code, but it needs a human brain for the business side.</p>
+      <p>Understanding code still matters, too. As the AI works, it shows brief glimpses of its reasoning, and you can follow along. It runs a bash command, then accesses a file, then writes some JavaScript, then a Python script, then asks me to open the cloud tool where the client keeps its database. Following that takes knowledge and interest.</p>
+      <p>A month in, I'm honestly not sure where I am. I understand more than I did. And the experience gave direction to an itch I've had since my thesis. I want to research this, because I don't know enough. I'm not sure anyone does, except maybe the people building these models.</p>
+      <p>I still vibe code for fun. I switch my brain off, describe the high-level structure, and let the AI write the code. Work is different. There, I try to take a deep breath and understand what I'm doing, even when it moves fast and there's pressure to deliver.</p>
+      <p>Keeping up is hard, but the goal isn't to match the model's speed. It's to make its output <span class="hl hl-2">legible</span>, something anyone can look at and follow, rather than a black box that takes five hours to untangle.</p>
+    </article>
+  </main>
+
+  <footer class="site">
+    <span>Alexandre Alves</span>
+    <a href="/">← Back to home</a>
+  </footer>
+
+</div>
+</body>
+</html>
