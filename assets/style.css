@@ -129,7 +129,6 @@ a.row:hover .row-title { text-decoration: underline; text-decoration-thickness: 
 
 .empty { padding: 24px 0; border-top: 1px solid var(--line); color: var(--body); font-size: 18px; margin: 0; }
 
-/* Thesis page */
 .back { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; color: var(--text); }
 .back span { font-size: 15px; font-weight: 600; }
 .paper-head { display: flex; flex-direction: column; gap: 20px; margin-bottom: 56px; }
