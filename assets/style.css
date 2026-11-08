@@ -102,7 +102,7 @@ a:focus-visible, button:focus-visible {
 
 main { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 72px; }
 
-.hl { padding: 0 6px; border-radius: 6px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hl { padding: 0 6px; border-radius: 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .hl-1 { background: var(--hl-1); }
 .hl-2 { background: var(--hl-2); }
 
@@ -145,7 +145,7 @@ a.row:hover .row-title { text-decoration: underline; text-decoration-thickness: 
 .btn.primary { background: var(--btn-bg); color: var(--btn-text); }
 .prose { display: flex; flex-direction: column; gap: 20px; font-size: 19px; line-height: 1.7; color: var(--body); margin-bottom: 56px; }
 .prose p { margin: 0; }
-.prose .hl { padding: 0 4px; border-radius: 4px; color: var(--text); }
+.prose .hl { padding: 0 4px; border-radius: 0; color: var(--text); }
 .facts .row { padding: 16px 0; }
 .facts .row-meta { padding-top: 0; }
 .facts .row-body { font-size: 16px; line-height: 1.55; }
